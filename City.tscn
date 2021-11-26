@@ -14,35 +14,20 @@
 position = Vector2( 0, 320 )
 
 [node name="CityBlock1" type="Node2D" parent="CityStreet1"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="RoadV1" parent="CityStreet1/CityBlock1" instance=ExtResource( 3 )]
 
 [node name="RoadV2" parent="CityStreet1/CityBlock1" instance=ExtResource( 3 )]
 position = Vector2( 0, 320 )
 
-[node name="Building4" parent="CityStreet1/CityBlock1" instance=ExtResource( 5 )]
-position = Vector2( 1280, 0 )
-
 [node name="RoadV3" parent="CityStreet1/CityBlock1" instance=ExtResource( 3 )]
 position = Vector2( 0, 640 )
 
 [node name="RoadV4" parent="CityStreet1/CityBlock1" instance=ExtResource( 3 )]
 position = Vector2( 0, 960 )
-
-[node name="Building8" parent="CityStreet1/CityBlock1" instance=ExtResource( 5 )]
-position = Vector2( 1280, 320 )
-
-[node name="Building12" parent="CityStreet1/CityBlock1" instance=ExtResource( 5 )]
-position = Vector2( 1280, 640 )
-
-[node name="Building14" parent="CityStreet1/CityBlock1" instance=ExtResource( 5 )]
-position = Vector2( 640, 960 )
-
-[node name="Building15" parent="CityStreet1/CityBlock1" instance=ExtResource( 5 )]
-position = Vector2( 960, 960 )
-
-[node name="Building16" parent="CityStreet1/CityBlock1" instance=ExtResource( 5 )]
-position = Vector2( 1280, 960 )
 
 [node name="RoadH1" parent="CityStreet1/CityBlock1" instance=ExtResource( 2 )]
 position = Vector2( 320, 1280 )
@@ -71,11 +56,27 @@ position = Vector2( 328, 640 )
 [node name="House4" parent="CityStreet1/CityBlock1" instance=ExtResource( 6 )]
 position = Vector2( 328, 960 )
 
+[node name="House5" parent="CityStreet1/CityBlock1" instance=ExtResource( 6 )]
+position = Vector2( 1600, 320 )
+rotation = 3.14159
+
+[node name="House6" parent="CityStreet1/CityBlock1" instance=ExtResource( 6 )]
+position = Vector2( 1600, 640 )
+rotation = 3.14159
+
+[node name="House7" parent="CityStreet1/CityBlock1" instance=ExtResource( 6 )]
+position = Vector2( 1600, 960 )
+rotation = 3.14159
+
+[node name="House8" parent="CityStreet1/CityBlock1" instance=ExtResource( 6 )]
+position = Vector2( 1600, 1280 )
+rotation = 3.14159
+
 [node name="Park" parent="CityStreet1/CityBlock1" instance=ExtResource( 1 )]
 position = Vector2( 960, 0 )
 
 [node name="Park2" parent="CityStreet1/CityBlock1" instance=ExtResource( 1 )]
-position = Vector2( 960, 640 )
+position = Vector2( 648, 960 )
 
 [node name="Park3" parent="CityStreet1/CityBlock1" instance=ExtResource( 1 )]
 position = Vector2( 648, 960 )
@@ -89,6 +90,12 @@ position = Vector2( 640, 320 )
 
 [node name="Grass3" parent="CityStreet1/CityBlock1" instance=ExtResource( 7 )]
 position = Vector2( 960, 320 )
+
+[node name="Grass4" parent="CityStreet1/CityBlock1" instance=ExtResource( 7 )]
+position = Vector2( 960, 640 )
+
+[node name="Grass5" parent="CityStreet1/CityBlock1" instance=ExtResource( 7 )]
+position = Vector2( 960, 960 )
 
 [node name="CityBlock2" type="Node2D" parent="CityStreet1"]
 position = Vector2( 1600, 0 )

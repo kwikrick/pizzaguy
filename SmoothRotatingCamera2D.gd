@@ -47,7 +47,6 @@ func _process(delta):
 	var position_offset = position_velocity * position_lookahead 
 	if position_offset.length() > position_offset_max: 
 		position_offset = position_offset / position_offset.length() * position_offset_max 
-	print(position_offset)
 	var cam_pos = cur_pos + position_offset 
 	
 	var angular_offset = angular_velocity * angular_lookahead 

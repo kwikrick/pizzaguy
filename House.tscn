@@ -67,6 +67,16 @@ scale = Vector2( 0.884615, 1 )
 color = Color( 0.356863, 0.227451, 0.0784314, 1 )
 polygon = PoolVector2Array( 56, 104, 264, 104, 264, 120, 56, 120 )
 
+[node name="Polygon2D" type="Polygon2D" parent="Polygons"]
+color = Color( 0.176471, 0.176471, 0.176471, 1 )
+polygon = PoolVector2Array( 240, 96, 240, 72, 216, 72, 216, 96 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="Polygons"]
+position = Vector2( 228, 84 )
+color = Color( 0, 0, 0, 1 )
+offset = Vector2( -224, -80 )
+polygon = PoolVector2Array( 230, 74, 232, 80, 230, 86, 224, 88, 218, 86, 216, 80, 218, 74, 224, 72 )
+
 [node name="CollisionShape2D1" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 160, 112 )

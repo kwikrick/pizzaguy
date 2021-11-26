@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UICanvas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.68176
+margin_top = 1.68176
+margin_right = 1.68176
+margin_bottom = 1.68176
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="World" parent="." instance=ExtResource( 1 )]
+position = Vector2( -0.68176, -0.68176 )
+
+[node name="UICanvas" parent="." instance=ExtResource( 2 )]
+
+[node name="PickupTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="TaskTimer" type="Timer" parent="."]
+wait_time = 120.0
+one_shot = true
+
+[node name="FailTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="player_enter_pickup" from="World" to="." method="_on_World_player_enter_pickup"]
+[connection signal="player_exit_pickup" from="World" to="." method="_on_World_player_exit_pickup"]
+[connection signal="restart_game" from="UICanvas" to="." method="_on_UICanvas_restart_game"]
+[connection signal="timeout" from="PickupTimer" to="." method="_on_PickupTimer_timeout"]
+[connection signal="timeout" from="TaskTimer" to="." method="_on_TaskTimer_timeout"]
+[connection signal="timeout" from="FailTimer" to="." method="_on_FailTimer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

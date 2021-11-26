@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/pavestone.png" type="Texture" id=1]
+
+[node name="RoadV" type="Node2D"]
+
+[node name="Sidewalk1" type="Polygon2D" parent="."]
+color = Color( 0.811765, 0.811765, 0.811765, 1 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 320, 0, 320 )
+
+[node name="Sidewalk2" type="Polygon2D" parent="."]
+position = Vector2( 256, 0 )
+color = Color( 0.811765, 0.811765, 0.811765, 1 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 64, 0, 64, 320, 0, 320 )
+
+[node name="Road" type="Polygon2D" parent="."]
+position = Vector2( 64, 0.140308 )
+color = Color( 0.254902, 0.254902, 0.254902, 1 )
+polygon = PoolVector2Array( 0, 0, 192, 0, 192, 320, 0, 320 )
+
+[node name="CenterMark" type="Polygon2D" parent="."]
+position = Vector2( 160, 48 )
+offset = Vector2( -160, -44 )
+polygon = PoolVector2Array( 156, 0, 164, 0, 164, 56, 156, 56 )
+
+[node name="CenterMark2" type="Polygon2D" parent="."]
+position = Vector2( 160, 112 )
+offset = Vector2( -160, -44 )
+polygon = PoolVector2Array( 156, 0, 164, 0, 164, 56, 156, 56 )
+
+[node name="CenterMark3" type="Polygon2D" parent="."]
+position = Vector2( 160, 176 )
+offset = Vector2( -160, -44 )
+polygon = PoolVector2Array( 156, 0, 164, 0, 164, 56, 156, 56 )
+
+[node name="CenterMark4" type="Polygon2D" parent="."]
+position = Vector2( 160, 240 )
+offset = Vector2( -160, -44 )
+polygon = PoolVector2Array( 156, 0, 164, 0, 164, 56, 156, 56 )
+
+[node name="CenterMark5" type="Polygon2D" parent="."]
+position = Vector2( 160, 304 )
+offset = Vector2( -160, -44 )
+polygon = PoolVector2Array( 156, 0, 164, 0, 164, 56, 156, 56 )

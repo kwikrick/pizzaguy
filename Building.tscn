@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://grass.tres" type="Texture" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 1.0
+persistence = 0.092
+
+[sub_resource type="NoiseTexture" id=2]
+width = 32
+height = 32
+noise = SubResource( 1 )
+
+[sub_resource type="OpenSimplexNoise" id=3]
+period = 4.0
+persistence = 0.0
+
+[sub_resource type="NoiseTexture" id=4]
+width = 32
+height = 32
+seamless = true
+noise = SubResource( 3 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 144, 144 )
+
+[node name="Building" type="StaticBody2D"]
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="Grass" type="Polygon2D" parent="Polygons"]
+position = Vector2( 104, 16 )
+color = Color( 0.411765, 0.662745, 0.184314, 1 )
+offset = Vector2( -104, -16 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 304, 0, 304, 16, 0, 16 )
+
+[node name="Grass2" type="Polygon2D" parent="Polygons"]
+position = Vector2( 16, 304 )
+color = Color( 0.411765, 0.662745, 0.184314, 1 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 304, 0, 304, 16, 0, 16 )
+
+[node name="Grass3" type="Polygon2D" parent="Polygons"]
+position = Vector2( 304, 0 )
+color = Color( 0.411765, 0.662745, 0.184314, 1 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 16, 0, 16, 304, 0, 304 )
+
+[node name="Grass4" type="Polygon2D" parent="Polygons"]
+position = Vector2( 0, 16 )
+color = Color( 0.411765, 0.662745, 0.184314, 1 )
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 16, 0, 16, 304, 0, 304 )
+
+[node name="Wall2" type="Polygon2D" parent="Polygons"]
+position = Vector2( 232, 296 )
+color = Color( 0.419608, 0.356863, 0.337255, 1 )
+offset = Vector2( -200, -8 )
+texture = SubResource( 2 )
+polygon = PoolVector2Array( 0, 0, 179.87, 3.8147e-06, 272, 0, 272, 16, 0, 16 )
+
+[node name="Wall3" type="Polygon2D" parent="Polygons"]
+position = Vector2( 64, 136 )
+color = Color( 0.419608, 0.356863, 0.337255, 1 )
+offset = Vector2( -200, -8 )
+texture = SubResource( 2 )
+polygon = PoolVector2Array( 152, -96, 168, -96, 168, 176, 152, 176 )
+
+[node name="Wall5" type="Polygon2D" parent="Polygons"]
+position = Vector2( 336, 120 )
+color = Color( 0.419608, 0.356863, 0.337255, 1 )
+offset = Vector2( -200, -8 )
+texture = SubResource( 2 )
+polygon = PoolVector2Array( 152, -96, 168, -96, 168, 176, 152, 176 )
+
+[node name="Wall4" type="Polygon2D" parent="Polygons"]
+position = Vector2( 216, 24 )
+color = Color( 0.419608, 0.356863, 0.337255, 1 )
+offset = Vector2( -200, -8 )
+texture = SubResource( 2 )
+polygon = PoolVector2Array( 0, 0, 179.87, 3.8147e-06, 272, 0, 272, 16, 0, 16 )
+
+[node name="Roof" type="Polygon2D" parent="Polygons"]
+color = Color( 0.168627, 0.0862745, 0.0862745, 1 )
+texture = SubResource( 4 )
+polygon = PoolVector2Array( 32, 32, 288, 32, 288, 288, 32, 288 )
+
+[node name="Fan1" type="Polygon2D" parent="Polygons"]
+position = Vector2( 232, 96 )
+color = Color( 0.654902, 0.654902, 0.654902, 1 )
+offset = Vector2( -88, -80 )
+polygon = PoolVector2Array( 64, 64, 96, 64, 96, 96, 64, 96 )
+
+[node name="Fan2" type="Polygon2D" parent="Polygons"]
+position = Vector2( 104, 96 )
+color = Color( 0.654902, 0.654902, 0.654902, 1 )
+offset = Vector2( -88, -80 )
+polygon = PoolVector2Array( 64, 64, 96, 64, 96, 96, 64, 96 )
+
+[node name="Fan3" type="Polygon2D" parent="Polygons"]
+position = Vector2( 104, 224 )
+color = Color( 0.654902, 0.654902, 0.654902, 1 )
+offset = Vector2( -88, -80 )
+polygon = PoolVector2Array( 64, 64, 96, 64, 96, 96, 64, 96 )
+
+[node name="Fan4" type="Polygon2D" parent="Polygons"]
+position = Vector2( 232, 224 )
+color = Color( 0.654902, 0.654902, 0.654902, 1 )
+offset = Vector2( -88, -80 )
+polygon = PoolVector2Array( 64, 64, 96, 64, 96, 96, 64, 96 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 160, 160 )
+shape = SubResource( 5 )

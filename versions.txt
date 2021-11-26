@@ -1,0 +1,15 @@
+Versions / History
+
+2021-11-21 Trijam Release
+
+2021-11-22 
+bugfix move pickup point 
+bugfix update ui on restart
+
+2021-11-24
+added Car
+
+2021-11-24
+new random positioning functions in Util
+generic input via Input and input map
+ 

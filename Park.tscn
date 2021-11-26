@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=1]
+[ext_resource path="res://grass.tres" type="Texture" id=2]
+
+[node name="Park" type="Node2D"]
+
+[node name="Grass" type="Polygon2D" parent="."]
+color = Color( 0.384314, 0.643137, 0.192157, 1 )
+texture = ExtResource( 2 )
+polygon = PoolVector2Array( 320, 0, 0, 0, 0, 320, 320, 320 )
+
+[node name="Node2D" parent="Grass" instance=ExtResource( 1 )]
+position = Vector2( 64, 56 )
+
+[node name="Node2D2" parent="Grass" instance=ExtResource( 1 )]
+position = Vector2( 88, 144 )
+
+[node name="Node2D3" parent="Grass" instance=ExtResource( 1 )]
+position = Vector2( 56, 240 )
+
+[node name="Node2D4" parent="Grass" instance=ExtResource( 1 )]
+position = Vector2( 152, 256 )
+
+[node name="Node2D5" parent="Grass" instance=ExtResource( 1 )]
+position = Vector2( 232, 192 )
+
+[node name="Node2D6" parent="Grass" instance=ExtResource( 1 )]
+position = Vector2( 264, 56 )
+
+[node name="Node2D7" parent="Grass" instance=ExtResource( 1 )]
+position = Vector2( 184, 40 )

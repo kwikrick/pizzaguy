@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 128.0
+
+[node name="PickupArea" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+color = Color( 0.172549, 0.54902, 0.733333, 0.25098 )
+polygon = PoolVector2Array( 0, -256, 192, -192, 256, 0, 192, 192, 0, 256, -192, 192, -256, 0, -192, -192 )
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 96, -96, 128, 0, 96, 96, 0, 128, -96, 96, -128, 0, -96, -96, 0, -128, 96, -96 )
+width = 3.0
+default_color = Color( 1, 1, 1, 1 )

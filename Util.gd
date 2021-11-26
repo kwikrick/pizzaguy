@@ -1,7 +1,8 @@
 extends Node
 
 # let new_node jump to a random position in rect
-static func safe_random_jump_2d(new_node:Node, shape:CollisionShape2D, rect, max_try=100):
+
+static func safe_random_jump_2d(new_node:CollisionObject2D, shape:CollisionShape2D, rect, max_try=100):
 		var i=0
 		while i<max_try:
 			i+=1
@@ -24,7 +25,7 @@ static func safe_random_jump_2d(new_node:Node, shape:CollisionShape2D, rect, max
 			var count = collisions.size()
 			if count==0: 
 				new_node.transform = transform
-				print("safe_random_jump_2d: sucess ",new_node) 
+				#print("safe_random_jump_2d: sucess ",new_node) 
 				break
 		
 		if i>max_try:

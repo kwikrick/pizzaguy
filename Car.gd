@@ -4,6 +4,12 @@ extends RigidBody2D
 #func _ready():
 #	pass
 
+# ------ sensors ----
+var front_area = 0
+var left_area = 0
+var right_area = 0
+
+
 # ------- physics -----
 
 func _physics_process(delta):
@@ -14,7 +20,7 @@ func _physics_process(delta):
 	
 	# power/steering parameters
 	var forward_power = 1e4
-	var rotate_coefficient = 1e3
+	var rotate_coefficient = 5e3
 	var reverse_power = 5e3
 	
 	# get and compute some directions and velocities
@@ -29,27 +35,45 @@ func _physics_process(delta):
 	var forward_speed = forward_velocity.length()
 	if !roll_forwards: forward_speed *= -1
 	
+	# ai control
+	var press_up=false
+	var press_down=false
+	var press_left=false
+	var press_right=false
+	
+	if front_area > 0:
+		press_down=true
+	else:
+		press_up=true
+	
+	if left_area > 0:
+		if roll_forwards:
+			press_right=true
+		else:
+			press_left=true
+		
+	if right_area > 0:
+		if roll_forwards:
+			press_left=true
+		else:
+			press_right=true
+	
 	# contol forward/backward/breaking
 	var breaking = false
-#	if Input.is_action_pressed("ui_up"): 
-#		if !roll_forwards and forward_velocity.length()>10:
-#			breaking = true
-#		add_force(Vector2(0,0),forward*forward_power*delta)
-#	if Input.is_action_pressed("ui_down"): 
-#		if roll_forwards and forward_velocity.length()>10:
-#			breaking = true	
-#		add_force(Vector2(0,0),-forward*reverse_power*delta)
-#
-#	# control lef/right
-#	###var anim="default"
-#	if Input.is_action_pressed("ui_right"): 
-#		add_torque(forward_speed*rotate_coefficient*delta)
-#		###anim="right"
-#	if Input.is_action_pressed("ui_left"): 
-#		add_torque(-forward_speed*rotate_coefficient*delta)
-#		##anim="left" 
+	if press_up: 
+		if !roll_forwards and forward_velocity.length()>10:
+			breaking = true
+		add_force(Vector2(0,0),forward*forward_power*delta)
+	if press_down: 
+		if roll_forwards and forward_velocity.length()>10:
+			breaking = true	
+		add_force(Vector2(0,0),-forward*reverse_power*delta)
 
-	###$AnimatedSprite.animation = anim
+	# control lef/right
+	if press_right: 
+		add_torque(forward_speed*rotate_coefficient*delta)
+	if press_left: 
+		add_torque(-forward_speed*rotate_coefficient*delta)
 	
 	# friction (and breaking)
 	var roll_friction_coeefficient = 10
@@ -67,3 +91,23 @@ func _physics_process(delta):
 	add_force(Vector2(0,0),right_friction_force)
 	add_torque(angular_friction_torque)
 		
+
+
+func _on_FrontArea_body_entered(body):
+	front_area+=1
+
+func _on_FrontArea_body_exited(body):
+	front_area-=1
+
+func _on_LeftArea_body_entered(body):
+	left_area+=1
+
+func _on_LeftArea_body_exited(body):
+	left_area-=1
+
+func _on_RightArea_body_entered(body):
+	right_area+=1
+
+func _on_RightArea_body_exited(body):
+	right_area-=1
+

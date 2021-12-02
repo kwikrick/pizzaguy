@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Scooter.tscn" type="PackedScene" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://SmoothRotatingCamera2D.gd" type="Script" id=5]
 [ext_resource path="res://Trash.tscn" type="PackedScene" id=7]
 [ext_resource path="res://PickupArea.tscn" type="PackedScene" id=9]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 2000.0
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,7 +20,7 @@ position = Vector2( 1, 0 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 128, 320 )
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D_disabled" type="Camera2D" parent="Player"]
 visible = false
 position = Vector2( 0, -192 )
 rotating = true
@@ -25,6 +28,11 @@ smoothing_enabled = true
 
 [node name="SmoothRotatingCamera2D" type="Node2D" parent="Player"]
 script = ExtResource( 5 )
+
+[node name="CarSpawnArea" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CarSpawnArea"]
+shape = SubResource( 1 )
 
 [node name="PlayerStartPos" type="Position2D" parent="."]
 position = Vector2( 128, 320 )
@@ -49,5 +57,13 @@ position = Vector2( 203, 158 )
 [node name="Car" parent="Objects" instance=ExtResource( 4 )]
 position = Vector2( 440, 139 )
 
+[node name="CarSpawnTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="area_entered" from="Player/CarSpawnArea" to="." method="_on_CarSpawnArea_area_entered"]
+[connection signal="area_exited" from="Player/CarSpawnArea" to="." method="_on_CarSpawnArea_area_exited"]
+[connection signal="body_exited" from="Player/CarSpawnArea" to="." method="_on_CarSpawnArea_body_exited"]
 [connection signal="body_entered" from="PickupArea" to="." method="_on_PickupArea_body_entered"]
 [connection signal="body_exited" from="PickupArea" to="." method="_on_PickupArea_body_exited"]
+[connection signal="timeout" from="CarSpawnTimer" to="." method="_on_CarSpawnTimer_timeout"]

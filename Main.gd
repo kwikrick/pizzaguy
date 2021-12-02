@@ -26,11 +26,11 @@ func _ready():
 	# place pickup area (and start task timer)
 	move_pickup()
 	# spawn some cars
-	for _i in range(100):
-		spawn_car()
+	#for _i in range(100):
+	#	spawn_car()
 	# spawn some trash
-	for _i in range(100):
-		spawn_trash()
+	#for _i in range(100):
+	#	spawn_trash()
 		
 		
 	
@@ -124,8 +124,9 @@ func move_pickup():
 	
 func _on_SpawnTimer_timeout():
 	# spawn some cars
-	spawn_car()
-	spawn_trash()
+	#spawn_car()
+	#spawn_trash()
+	pass
 	
 func spawn_car():
 	var new_car = Car.instance()

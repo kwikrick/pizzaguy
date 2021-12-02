@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "ClassCar",
+"language": "GDScript",
+"path": "res://Car.gd"
+}, {
+"base": "Area2D",
+"class": "RoadDirectionMarker",
+"language": "GDScript",
+"path": "res://RoadDirectionMarker1.gd"
+} ]
+_global_script_class_icons={
+"ClassCar": "",
+"RoadDirectionMarker": ""
+}
+
 [application]
 
 config/name="Pizzaguy"

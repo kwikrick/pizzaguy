@@ -3,10 +3,14 @@ TODO
 
 GAME
 	- obstacles:
-        - better car AI (follow road)
+		- better car AI (follow road)
 		- pedestrians 
 		- small obstacles (e.g. trashcans)
 		- big obstacles (e.g. roadblocks)
+		- spawn queue: put one obstacle each frame, because collision updated only once per frame
+	- physics:
+		- model wheels that apply force (power and friction) on different points on body
+		- steer by rotating front wheel; don't directly apply torque to body directly 
 	- scooter damage 
 		- slow down
 		- repear pickups / garage 
@@ -16,8 +20,8 @@ GAME
 	- fuel?
 	- difficuly balancing  
 		- task time and score: further away get more time but also higher reward if you are fast
-		- choose task based on distance / required speed / danger (getto neigbourhoods?)
-		- special deliveries (drugs?)
+		- choose task based on distance / required speed / danger (nasty customers or neighbourhoods?)
+		- special deliveries (drugs?) / non-pizza related missions
 		- work for a pizza place or freelance jobs?
 	- buy upgrades
 		- faster scooters
@@ -40,8 +44,9 @@ GRAPHICS
 	- slow/lagged rotation of viewport (re-implement Camera2D)
 	- tire smoke, exhaust smoke (particle sys)
 	
-WORLD DETAILS:
-	- show people deliver/pickup pizza, remarks (Wow, that's fast! Geez, it almost cold) 
+WORLD DETAILS / STORY:
+	- show people deliver/pickup pizza
+	- customer character screen /  remarks (Wow, that's fast! Geez, it almost cold!) 
 	
 
 UI:

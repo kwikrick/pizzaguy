@@ -17,7 +17,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "RoadDirectionMarker",
 "language": "GDScript",
-"path": "res://RoadDirectionMarker1.gd"
+"path": "res://RoadDirectionMarker.gd"
 } ]
 _global_script_class_icons={
 "ClassCar": "",

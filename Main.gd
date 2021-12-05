@@ -25,15 +25,6 @@ func _ready():
 	print("Main: _ready")
 	# place pickup area (and start task timer)
 	move_pickup()
-	# spawn some cars
-	#for _i in range(100):
-	#	spawn_car()
-	# spawn some trash
-	#for _i in range(100):
-	#	spawn_trash()
-		
-		
-	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -121,20 +112,3 @@ func move_pickup():
 	# restart task timer
 	$TaskTimer.wait_time = 10.0 + pickup_dist/200.0
 	$TaskTimer.start()
-	
-func _on_SpawnTimer_timeout():
-	# spawn some cars
-	#spawn_car()
-	#spawn_trash()
-	pass
-	
-func spawn_car():
-	var new_car = Car.instance()
-	$World/Objects.add_child(new_car)
-	Util.safe_random_jump_2d(new_car, new_car.get_node("CollisionShape2D"),Rect2(0,0,city_size,city_size))
-#	
-	
-func spawn_trash():
-	var new_trash = Trash.instance()
-	$World/Objects.add_child(new_trash)
-	Util.safe_random_jump_2d(new_trash, new_trash.get_node("CollisionShape2D"),Rect2(0,0,city_size,city_size))

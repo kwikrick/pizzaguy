@@ -33,14 +33,9 @@ one_shot = true
 [node name="FailTimer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
 [connection signal="player_enter_pickup" from="World" to="." method="_on_World_player_enter_pickup"]
 [connection signal="player_exit_pickup" from="World" to="." method="_on_World_player_exit_pickup"]
 [connection signal="restart_game" from="UICanvas" to="." method="_on_UICanvas_restart_game"]
 [connection signal="timeout" from="PickupTimer" to="." method="_on_PickupTimer_timeout"]
 [connection signal="timeout" from="TaskTimer" to="." method="_on_TaskTimer_timeout"]
 [connection signal="timeout" from="FailTimer" to="." method="_on_FailTimer_timeout"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

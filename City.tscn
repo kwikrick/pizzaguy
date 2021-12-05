@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Park.tscn" type="PackedScene" id=1]
 [ext_resource path="res://RoadH.tscn" type="PackedScene" id=2]
@@ -7,27 +7,21 @@
 [ext_resource path="res://Building.tscn" type="PackedScene" id=5]
 [ext_resource path="res://House.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Grass.tscn" type="PackedScene" id=7]
+[ext_resource path="res://RoadL.tscn" type="PackedScene" id=8]
+[ext_resource path="res://RoadT.tscn" type="PackedScene" id=9]
 
 [node name="City" type="Node2D"]
 
 [node name="CityStreet1" type="Node2D" parent="."]
 position = Vector2( 0, 320 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CityBlock1" type="Node2D" parent="CityStreet1"]
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="RoadV1" parent="CityStreet1/CityBlock1" instance=ExtResource( 3 )]
-
-[node name="RoadV2" parent="CityStreet1/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 320 )
-
-[node name="RoadV3" parent="CityStreet1/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 640 )
-
-[node name="RoadV4" parent="CityStreet1/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 960 )
 
 [node name="RoadH1" parent="CityStreet1/CityBlock1" instance=ExtResource( 2 )]
 position = Vector2( 320, 1280 )
@@ -40,9 +34,6 @@ position = Vector2( 960, 1280 )
 
 [node name="RoadH4" parent="CityStreet1/CityBlock1" instance=ExtResource( 2 )]
 position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet1/CityBlock1" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="House1" parent="CityStreet1/CityBlock1" instance=ExtResource( 6 )]
 position = Vector2( 320, 0 )
@@ -554,25 +545,14 @@ __meta__ = {
 [node name="Building1" parent="CityStreet2/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 0 )
 
-[node name="RoadV1" parent="CityStreet2/CityBlock1" instance=ExtResource( 3 )]
-
 [node name="Building3" parent="CityStreet2/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 960, 0 )
-
-[node name="RoadV2" parent="CityStreet2/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 320 )
 
 [node name="Building4" parent="CityStreet2/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 0 )
 
 [node name="Building5" parent="CityStreet2/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 320 )
-
-[node name="RoadV3" parent="CityStreet2/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 640 )
-
-[node name="RoadV4" parent="CityStreet2/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 960 )
 
 [node name="Building8" parent="CityStreet2/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 320 )
@@ -606,9 +586,6 @@ position = Vector2( 960, 1280 )
 
 [node name="RoadH4" parent="CityStreet2/CityBlock1" instance=ExtResource( 2 )]
 position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet2/CityBlock1" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock2" type="Node2D" parent="CityStreet2"]
 position = Vector2( 1600, 0 )
@@ -1067,25 +1044,14 @@ __meta__ = {
 [node name="Building1" parent="CityStreet3/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 0 )
 
-[node name="RoadV1" parent="CityStreet3/CityBlock1" instance=ExtResource( 3 )]
-
 [node name="Building3" parent="CityStreet3/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 960, 0 )
-
-[node name="RoadV2" parent="CityStreet3/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 320 )
 
 [node name="Building4" parent="CityStreet3/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 0 )
 
 [node name="Building5" parent="CityStreet3/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 320 )
-
-[node name="RoadV3" parent="CityStreet3/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 640 )
-
-[node name="RoadV4" parent="CityStreet3/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 960 )
 
 [node name="Building8" parent="CityStreet3/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 320 )
@@ -1119,9 +1085,6 @@ position = Vector2( 960, 1280 )
 
 [node name="RoadH4" parent="CityStreet3/CityBlock1" instance=ExtResource( 2 )]
 position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet3/CityBlock1" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock2" type="Node2D" parent="CityStreet3"]
 position = Vector2( 1600, 0 )
@@ -1580,25 +1543,14 @@ __meta__ = {
 [node name="Building1" parent="CityStreet4/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 0 )
 
-[node name="RoadV1" parent="CityStreet4/CityBlock1" instance=ExtResource( 3 )]
-
 [node name="Building3" parent="CityStreet4/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 960, 0 )
-
-[node name="RoadV2" parent="CityStreet4/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 320 )
 
 [node name="Building4" parent="CityStreet4/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 0 )
 
 [node name="Building5" parent="CityStreet4/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 320 )
-
-[node name="RoadV3" parent="CityStreet4/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 640 )
-
-[node name="RoadV4" parent="CityStreet4/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 960 )
 
 [node name="Building8" parent="CityStreet4/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 320 )
@@ -1632,9 +1584,6 @@ position = Vector2( 960, 1280 )
 
 [node name="RoadH4" parent="CityStreet4/CityBlock1" instance=ExtResource( 2 )]
 position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet4/CityBlock1" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock2" type="Node2D" parent="CityStreet4"]
 position = Vector2( 1600, 0 )
@@ -2093,25 +2042,14 @@ __meta__ = {
 [node name="Building1" parent="CityStreet5/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 0 )
 
-[node name="RoadV1" parent="CityStreet5/CityBlock1" instance=ExtResource( 3 )]
-
 [node name="Building3" parent="CityStreet5/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 960, 0 )
-
-[node name="RoadV2" parent="CityStreet5/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 320 )
 
 [node name="Building4" parent="CityStreet5/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 0 )
 
 [node name="Building5" parent="CityStreet5/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 320 )
-
-[node name="RoadV3" parent="CityStreet5/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 640 )
-
-[node name="RoadV4" parent="CityStreet5/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 960 )
 
 [node name="Building8" parent="CityStreet5/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 320 )
@@ -2145,9 +2083,6 @@ position = Vector2( 960, 1280 )
 
 [node name="RoadH4" parent="CityStreet5/CityBlock1" instance=ExtResource( 2 )]
 position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet5/CityBlock1" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock2" type="Node2D" parent="CityStreet5"]
 position = Vector2( 1600, 0 )
@@ -2606,25 +2541,14 @@ __meta__ = {
 [node name="Building1" parent="CityStreet6/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 0 )
 
-[node name="RoadV1" parent="CityStreet6/CityBlock1" instance=ExtResource( 3 )]
-
 [node name="Building3" parent="CityStreet6/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 960, 0 )
-
-[node name="RoadV2" parent="CityStreet6/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 320 )
 
 [node name="Building4" parent="CityStreet6/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 0 )
 
 [node name="Building5" parent="CityStreet6/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 320 )
-
-[node name="RoadV3" parent="CityStreet6/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 640 )
-
-[node name="RoadV4" parent="CityStreet6/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 960 )
 
 [node name="Building8" parent="CityStreet6/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 320 )
@@ -2658,9 +2582,6 @@ position = Vector2( 960, 1280 )
 
 [node name="RoadH4" parent="CityStreet6/CityBlock1" instance=ExtResource( 2 )]
 position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet6/CityBlock1" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock2" type="Node2D" parent="CityStreet6"]
 position = Vector2( 1600, 0 )
@@ -3119,25 +3040,14 @@ __meta__ = {
 [node name="Building1" parent="CityStreet7/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 0 )
 
-[node name="RoadV1" parent="CityStreet7/CityBlock1" instance=ExtResource( 3 )]
-
 [node name="Building3" parent="CityStreet7/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 960, 0 )
-
-[node name="RoadV2" parent="CityStreet7/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 320 )
 
 [node name="Building4" parent="CityStreet7/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 0 )
 
 [node name="Building5" parent="CityStreet7/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 320 )
-
-[node name="RoadV3" parent="CityStreet7/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 640 )
-
-[node name="RoadV4" parent="CityStreet7/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 960 )
 
 [node name="Building8" parent="CityStreet7/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 320 )
@@ -3171,9 +3081,6 @@ position = Vector2( 960, 1280 )
 
 [node name="RoadH4" parent="CityStreet7/CityBlock1" instance=ExtResource( 2 )]
 position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet7/CityBlock1" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock2" type="Node2D" parent="CityStreet7"]
 position = Vector2( 1600, 0 )
@@ -3632,25 +3539,14 @@ __meta__ = {
 [node name="Building1" parent="CityStreet8/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 0 )
 
-[node name="RoadV1" parent="CityStreet8/CityBlock1" instance=ExtResource( 3 )]
-
 [node name="Building3" parent="CityStreet8/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 960, 0 )
-
-[node name="RoadV2" parent="CityStreet8/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 320 )
 
 [node name="Building4" parent="CityStreet8/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 0 )
 
 [node name="Building5" parent="CityStreet8/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 320, 320 )
-
-[node name="RoadV3" parent="CityStreet8/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 640 )
-
-[node name="RoadV4" parent="CityStreet8/CityBlock1" instance=ExtResource( 3 )]
-position = Vector2( 0, 960 )
 
 [node name="Building8" parent="CityStreet8/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 320 )
@@ -3672,21 +3568,6 @@ position = Vector2( 960, 960 )
 
 [node name="Building16" parent="CityStreet8/CityBlock1" instance=ExtResource( 5 )]
 position = Vector2( 1280, 960 )
-
-[node name="RoadH1" parent="CityStreet8/CityBlock1" instance=ExtResource( 2 )]
-position = Vector2( 320, 1280 )
-
-[node name="RoadH2" parent="CityStreet8/CityBlock1" instance=ExtResource( 2 )]
-position = Vector2( 640, 1280 )
-
-[node name="RoadH3" parent="CityStreet8/CityBlock1" instance=ExtResource( 2 )]
-position = Vector2( 960, 1280 )
-
-[node name="RoadH4" parent="CityStreet8/CityBlock1" instance=ExtResource( 2 )]
-position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet8/CityBlock1" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock2" type="Node2D" parent="CityStreet8"]
 position = Vector2( 1600, 0 )
@@ -3738,21 +3619,6 @@ position = Vector2( 960, 960 )
 [node name="Building16" parent="CityStreet8/CityBlock2" instance=ExtResource( 5 )]
 position = Vector2( 1280, 960 )
 
-[node name="RoadH1" parent="CityStreet8/CityBlock2" instance=ExtResource( 2 )]
-position = Vector2( 320, 1280 )
-
-[node name="RoadH2" parent="CityStreet8/CityBlock2" instance=ExtResource( 2 )]
-position = Vector2( 640, 1280 )
-
-[node name="RoadH3" parent="CityStreet8/CityBlock2" instance=ExtResource( 2 )]
-position = Vector2( 960, 1280 )
-
-[node name="RoadH4" parent="CityStreet8/CityBlock2" instance=ExtResource( 2 )]
-position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet8/CityBlock2" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
-
 [node name="CityBlock3" type="Node2D" parent="CityStreet8"]
 position = Vector2( 3200, 0 )
 __meta__ = {
@@ -3802,21 +3668,6 @@ position = Vector2( 960, 960 )
 
 [node name="Building16" parent="CityStreet8/CityBlock3" instance=ExtResource( 5 )]
 position = Vector2( 1280, 960 )
-
-[node name="RoadH1" parent="CityStreet8/CityBlock3" instance=ExtResource( 2 )]
-position = Vector2( 320, 1280 )
-
-[node name="RoadH2" parent="CityStreet8/CityBlock3" instance=ExtResource( 2 )]
-position = Vector2( 640, 1280 )
-
-[node name="RoadH3" parent="CityStreet8/CityBlock3" instance=ExtResource( 2 )]
-position = Vector2( 960, 1280 )
-
-[node name="RoadH4" parent="CityStreet8/CityBlock3" instance=ExtResource( 2 )]
-position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet8/CityBlock3" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock4" type="Node2D" parent="CityStreet8"]
 position = Vector2( 4800, 0 )
@@ -3868,21 +3719,6 @@ position = Vector2( 960, 960 )
 [node name="Building16" parent="CityStreet8/CityBlock4" instance=ExtResource( 5 )]
 position = Vector2( 1280, 960 )
 
-[node name="RoadH1" parent="CityStreet8/CityBlock4" instance=ExtResource( 2 )]
-position = Vector2( 320, 1280 )
-
-[node name="RoadH2" parent="CityStreet8/CityBlock4" instance=ExtResource( 2 )]
-position = Vector2( 640, 1280 )
-
-[node name="RoadH3" parent="CityStreet8/CityBlock4" instance=ExtResource( 2 )]
-position = Vector2( 960, 1280 )
-
-[node name="RoadH4" parent="CityStreet8/CityBlock4" instance=ExtResource( 2 )]
-position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet8/CityBlock4" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
-
 [node name="CityBlock5" type="Node2D" parent="CityStreet8"]
 position = Vector2( 6400, 0 )
 __meta__ = {
@@ -3929,21 +3765,6 @@ position = Vector2( 960, 960 )
 
 [node name="Building16" parent="CityStreet8/CityBlock5" instance=ExtResource( 5 )]
 position = Vector2( 1280, 960 )
-
-[node name="RoadH1" parent="CityStreet8/CityBlock5" instance=ExtResource( 2 )]
-position = Vector2( 320, 1280 )
-
-[node name="RoadH2" parent="CityStreet8/CityBlock5" instance=ExtResource( 2 )]
-position = Vector2( 640, 1280 )
-
-[node name="RoadH3" parent="CityStreet8/CityBlock5" instance=ExtResource( 2 )]
-position = Vector2( 960, 1280 )
-
-[node name="RoadH4" parent="CityStreet8/CityBlock5" instance=ExtResource( 2 )]
-position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet8/CityBlock5" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock6" type="Node2D" parent="CityStreet8"]
 position = Vector2( 8000, 0 )
@@ -3992,21 +3813,6 @@ position = Vector2( 320, 960 )
 [node name="Building16" parent="CityStreet8/CityBlock6" instance=ExtResource( 5 )]
 position = Vector2( 1280, 960 )
 
-[node name="RoadH1" parent="CityStreet8/CityBlock6" instance=ExtResource( 2 )]
-position = Vector2( 320, 1280 )
-
-[node name="RoadH2" parent="CityStreet8/CityBlock6" instance=ExtResource( 2 )]
-position = Vector2( 640, 1280 )
-
-[node name="RoadH3" parent="CityStreet8/CityBlock6" instance=ExtResource( 2 )]
-position = Vector2( 960, 1280 )
-
-[node name="RoadH4" parent="CityStreet8/CityBlock6" instance=ExtResource( 2 )]
-position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet8/CityBlock6" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
-
 [node name="CityBlock7" type="Node2D" parent="CityStreet8"]
 position = Vector2( 9600, 0 )
 __meta__ = {
@@ -4053,21 +3859,6 @@ position = Vector2( 960, 960 )
 
 [node name="Building16" parent="CityStreet8/CityBlock7" instance=ExtResource( 5 )]
 position = Vector2( 1280, 960 )
-
-[node name="RoadH1" parent="CityStreet8/CityBlock7" instance=ExtResource( 2 )]
-position = Vector2( 320, 1280 )
-
-[node name="RoadH2" parent="CityStreet8/CityBlock7" instance=ExtResource( 2 )]
-position = Vector2( 640, 1280 )
-
-[node name="RoadH3" parent="CityStreet8/CityBlock7" instance=ExtResource( 2 )]
-position = Vector2( 960, 1280 )
-
-[node name="RoadH4" parent="CityStreet8/CityBlock7" instance=ExtResource( 2 )]
-position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet8/CityBlock7" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
 
 [node name="CityBlock8" type="Node2D" parent="CityStreet8"]
 position = Vector2( 11200, 0 )
@@ -4116,29 +3907,11 @@ position = Vector2( 960, 960 )
 [node name="Building16" parent="CityStreet8/CityBlock8" instance=ExtResource( 5 )]
 position = Vector2( 1280, 960 )
 
-[node name="RoadH1" parent="CityStreet8/CityBlock8" instance=ExtResource( 2 )]
-position = Vector2( 320, 1280 )
-
-[node name="RoadH2" parent="CityStreet8/CityBlock8" instance=ExtResource( 2 )]
-position = Vector2( 640, 1280 )
-
-[node name="RoadH3" parent="CityStreet8/CityBlock8" instance=ExtResource( 2 )]
-position = Vector2( 960, 1280 )
-
-[node name="RoadH4" parent="CityStreet8/CityBlock8" instance=ExtResource( 2 )]
-position = Vector2( 1280, 1280 )
-
-[node name="RoadX2" parent="CityStreet8/CityBlock8" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
-
 [node name="CircleRoadNorth" type="Node2D" parent="."]
 position = Vector2( 0, 320 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="RoadX" parent="CircleRoadNorth" instance=ExtResource( 4 )]
-position = Vector2( 0, -320 )
 
 [node name="RoadH" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 320, -320 )
@@ -4152,9 +3925,6 @@ position = Vector2( 960, -320 )
 [node name="RoadH4" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 1280, -320 )
 
-[node name="RoadX2" parent="CircleRoadNorth" instance=ExtResource( 4 )]
-position = Vector2( 1600, -320 )
-
 [node name="RoadH5" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 1920, -320 )
 
@@ -4166,9 +3936,6 @@ position = Vector2( 2560, -320 )
 
 [node name="RoadH8" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 2880, -320 )
-
-[node name="RoadX3" parent="CircleRoadNorth" instance=ExtResource( 4 )]
-position = Vector2( 3200, -320 )
 
 [node name="RoadH9" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 3520, -320 )
@@ -4182,9 +3949,6 @@ position = Vector2( 4160, -320 )
 [node name="RoadH12" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 4480, -320 )
 
-[node name="RoadX4" parent="CircleRoadNorth" instance=ExtResource( 4 )]
-position = Vector2( 4800, -320 )
-
 [node name="RoadH13" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 5120, -320 )
 
@@ -4196,9 +3960,6 @@ position = Vector2( 5760, -320 )
 
 [node name="RoadH16" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 6080, -320 )
-
-[node name="RoadX5" parent="CircleRoadNorth" instance=ExtResource( 4 )]
-position = Vector2( 6400, -320 )
 
 [node name="RoadH17" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 6720, -320 )
@@ -4212,9 +3973,6 @@ position = Vector2( 7360, -320 )
 [node name="RoadH20" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 7680, -320 )
 
-[node name="RoadX6" parent="CircleRoadNorth" instance=ExtResource( 4 )]
-position = Vector2( 8000, -320 )
-
 [node name="RoadH21" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 8320, -320 )
 
@@ -4226,9 +3984,6 @@ position = Vector2( 8960, -320 )
 
 [node name="RoadH24" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 9280, -320 )
-
-[node name="RoadX7" parent="CircleRoadNorth" instance=ExtResource( 4 )]
-position = Vector2( 9600, -320 )
 
 [node name="RoadH25" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 9920, -320 )
@@ -4242,9 +3997,6 @@ position = Vector2( 10560, -320 )
 [node name="RoadH28" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 10880, -320 )
 
-[node name="RoadX8" parent="CircleRoadNorth" instance=ExtResource( 4 )]
-position = Vector2( 11200, -320 )
-
 [node name="RoadH29" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 11520, -320 )
 
@@ -4257,133 +4009,414 @@ position = Vector2( 12160, -320 )
 [node name="RoadH32" parent="CircleRoadNorth" instance=ExtResource( 2 )]
 position = Vector2( 12480, -320 )
 
-[node name="CircleReadEast" type="Node2D" parent="."]
-position = Vector2( 12800, 320 )
+[node name="RoadL" parent="CircleRoadNorth" instance=ExtResource( 8 )]
+position = Vector2( 320, -320 )
+rotation = 1.5708
+
+[node name="RoadT" parent="CircleRoadNorth" instance=ExtResource( 9 )]
+position = Vector2( 1600, -320 )
+
+[node name="RoadT2" parent="CircleRoadNorth" instance=ExtResource( 9 )]
+position = Vector2( 3200, -320 )
+
+[node name="RoadT3" parent="CircleRoadNorth" instance=ExtResource( 9 )]
+position = Vector2( 4800, -320 )
+
+[node name="RoadT4" parent="CircleRoadNorth" instance=ExtResource( 9 )]
+position = Vector2( 6400, -320 )
+
+[node name="RoadT5" parent="CircleRoadNorth" instance=ExtResource( 9 )]
+position = Vector2( 8000, -320 )
+
+[node name="RoadT6" parent="CircleRoadNorth" instance=ExtResource( 9 )]
+position = Vector2( 9600, -320 )
+
+[node name="RoadT7" parent="CircleRoadNorth" instance=ExtResource( 9 )]
+position = Vector2( 11200, -320 )
+
+[node name="CircleRoadWest" type="Node2D" parent="."]
+position = Vector2( 320, 13120 )
+rotation = 4.71239
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="RoadX" parent="CircleReadEast" instance=ExtResource( 4 )]
-position = Vector2( 0, -320 )
+[node name="RoadH" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 320, -320 )
 
-[node name="RoadV" parent="CircleReadEast" instance=ExtResource( 3 )]
+[node name="RoadH2" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 640, -320 )
 
-[node name="RoadV2" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 320 )
+[node name="RoadH3" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 960, -320 )
 
-[node name="RoadV3" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 640 )
+[node name="RoadH4" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 1280, -320 )
 
-[node name="RoadV4" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 960 )
+[node name="RoadH5" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 1920, -320 )
 
-[node name="RoadX2" parent="CircleReadEast" instance=ExtResource( 4 )]
-position = Vector2( 0, 1280 )
+[node name="RoadH6" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 2240, -320 )
 
-[node name="RoadV5" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 1600 )
+[node name="RoadH7" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 2560, -320 )
 
-[node name="RoadV6" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 1920 )
+[node name="RoadH8" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 2880, -320 )
 
-[node name="RoadV7" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 2240 )
+[node name="RoadH9" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 3520, -320 )
 
-[node name="RoadV8" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 2560 )
+[node name="RoadH10" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 3840, -320 )
 
-[node name="RoadX3" parent="CircleReadEast" instance=ExtResource( 4 )]
-position = Vector2( 0, 2880 )
+[node name="RoadH11" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 4160, -320 )
 
-[node name="RoadV9" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 3200 )
+[node name="RoadH12" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 4480, -320 )
 
-[node name="RoadV10" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 3520 )
+[node name="RoadH13" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 5120, -320 )
 
-[node name="RoadV11" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 3840 )
+[node name="RoadH14" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 5440, -320 )
 
-[node name="RoadV12" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 4160 )
+[node name="RoadH15" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 5760, -320 )
 
-[node name="RoadX4" parent="CircleReadEast" instance=ExtResource( 4 )]
-position = Vector2( 0, 4480 )
+[node name="RoadH16" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 6080, -320 )
 
-[node name="RoadV13" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 4800 )
+[node name="RoadH17" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 6720, -320 )
 
-[node name="RoadV14" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 5120 )
+[node name="RoadH18" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 7040, -320 )
 
-[node name="RoadV15" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 5440 )
+[node name="RoadH19" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 7360, -320 )
 
-[node name="RoadV16" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 5760 )
+[node name="RoadH20" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 7680, -320 )
 
-[node name="RoadX5" parent="CircleReadEast" instance=ExtResource( 4 )]
-position = Vector2( 0, 6080 )
+[node name="RoadH21" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 8320, -320 )
 
-[node name="RoadV17" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 6400 )
+[node name="RoadH22" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 8640, -320 )
 
-[node name="RoadV18" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 6720 )
+[node name="RoadH23" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 8960, -320 )
 
-[node name="RoadV19" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 7040 )
+[node name="RoadH24" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 9280, -320 )
 
-[node name="RoadV20" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 7360 )
+[node name="RoadH25" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 9920, -320 )
 
-[node name="RoadX6" parent="CircleReadEast" instance=ExtResource( 4 )]
-position = Vector2( 0, 7680 )
+[node name="RoadH26" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 10240, -320 )
 
-[node name="RoadV21" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 8000 )
+[node name="RoadH27" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 10560, -320 )
 
-[node name="RoadV22" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 8320 )
+[node name="RoadH28" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 10880, -320 )
 
-[node name="RoadV23" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 8640 )
+[node name="RoadH29" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 11520, -320 )
 
-[node name="RoadV24" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 8960 )
+[node name="RoadH30" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 11840, -320 )
 
-[node name="RoadX7" parent="CircleReadEast" instance=ExtResource( 4 )]
-position = Vector2( 0, 9280 )
+[node name="RoadH31" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 12160, -320 )
 
-[node name="RoadV25" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 9600 )
+[node name="RoadH32" parent="CircleRoadWest" instance=ExtResource( 2 )]
+position = Vector2( 12480, -320 )
 
-[node name="RoadV26" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 9920 )
+[node name="RoadL" parent="CircleRoadWest" instance=ExtResource( 8 )]
+position = Vector2( 320, -320 )
+rotation = 1.5708
 
-[node name="RoadV27" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 10240 )
+[node name="RoadT" parent="CircleRoadWest" instance=ExtResource( 9 )]
+position = Vector2( 1600, -320 )
 
-[node name="RoadV28" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 10560 )
+[node name="RoadT2" parent="CircleRoadWest" instance=ExtResource( 9 )]
+position = Vector2( 3200, -320 )
 
-[node name="RoadX8" parent="CircleReadEast" instance=ExtResource( 4 )]
-position = Vector2( 0, 10880 )
+[node name="RoadT3" parent="CircleRoadWest" instance=ExtResource( 9 )]
+position = Vector2( 4800, -320 )
 
-[node name="RoadX9" parent="CircleReadEast" instance=ExtResource( 4 )]
-position = Vector2( 0, 12480 )
+[node name="RoadT4" parent="CircleRoadWest" instance=ExtResource( 9 )]
+position = Vector2( 6400, -320 )
 
-[node name="RoadV29" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 11200 )
+[node name="RoadT5" parent="CircleRoadWest" instance=ExtResource( 9 )]
+position = Vector2( 8000, -320 )
 
-[node name="RoadV30" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 11520 )
+[node name="RoadT6" parent="CircleRoadWest" instance=ExtResource( 9 )]
+position = Vector2( 9600, -320 )
 
-[node name="RoadV31" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 11840 )
+[node name="RoadT7" parent="CircleRoadWest" instance=ExtResource( 9 )]
+position = Vector2( 11200, -320 )
 
-[node name="RoadV32" parent="CircleReadEast" instance=ExtResource( 3 )]
-position = Vector2( 0, 12160 )
+[node name="CircleRoadSouth" type="Node2D" parent="."]
+position = Vector2( 13120, 12800 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RoadH" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 320, -320 )
+
+[node name="RoadH2" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 640, -320 )
+
+[node name="RoadH3" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 960, -320 )
+
+[node name="RoadH4" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 1280, -320 )
+
+[node name="RoadH5" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 1920, -320 )
+
+[node name="RoadH6" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 2240, -320 )
+
+[node name="RoadH7" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 2560, -320 )
+
+[node name="RoadH8" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 2880, -320 )
+
+[node name="RoadH9" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 3520, -320 )
+
+[node name="RoadH10" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 3840, -320 )
+
+[node name="RoadH11" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 4160, -320 )
+
+[node name="RoadH12" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 4480, -320 )
+
+[node name="RoadH13" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 5120, -320 )
+
+[node name="RoadH14" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 5440, -320 )
+
+[node name="RoadH15" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 5760, -320 )
+
+[node name="RoadH16" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 6080, -320 )
+
+[node name="RoadH17" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 6720, -320 )
+
+[node name="RoadH18" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 7040, -320 )
+
+[node name="RoadH19" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 7360, -320 )
+
+[node name="RoadH20" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 7680, -320 )
+
+[node name="RoadH21" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 8320, -320 )
+
+[node name="RoadH22" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 8640, -320 )
+
+[node name="RoadH23" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 8960, -320 )
+
+[node name="RoadH24" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 9280, -320 )
+
+[node name="RoadH25" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 9920, -320 )
+
+[node name="RoadH26" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 10240, -320 )
+
+[node name="RoadH27" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 10560, -320 )
+
+[node name="RoadH28" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 10880, -320 )
+
+[node name="RoadH29" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 11520, -320 )
+
+[node name="RoadH30" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 11840, -320 )
+
+[node name="RoadH31" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 12160, -320 )
+
+[node name="RoadH32" parent="CircleRoadSouth" instance=ExtResource( 2 )]
+position = Vector2( 12480, -320 )
+
+[node name="RoadL" parent="CircleRoadSouth" instance=ExtResource( 8 )]
+position = Vector2( 320, -320 )
+rotation = 1.5708
+
+[node name="RoadT" parent="CircleRoadSouth" instance=ExtResource( 9 )]
+position = Vector2( 1600, -320 )
+
+[node name="RoadT2" parent="CircleRoadSouth" instance=ExtResource( 9 )]
+position = Vector2( 3200, -320 )
+
+[node name="RoadT3" parent="CircleRoadSouth" instance=ExtResource( 9 )]
+position = Vector2( 4800, -320 )
+
+[node name="RoadT4" parent="CircleRoadSouth" instance=ExtResource( 9 )]
+position = Vector2( 6400, -320 )
+
+[node name="RoadT5" parent="CircleRoadSouth" instance=ExtResource( 9 )]
+position = Vector2( 8000, -320 )
+
+[node name="RoadT6" parent="CircleRoadSouth" instance=ExtResource( 9 )]
+position = Vector2( 9600, -320 )
+
+[node name="RoadT7" parent="CircleRoadSouth" instance=ExtResource( 9 )]
+position = Vector2( 11200, -320 )
+
+[node name="CircleRoadEast" type="Node2D" parent="."]
+position = Vector2( 12800, 0 )
+rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RoadH" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 320, -320 )
+
+[node name="RoadH2" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 640, -320 )
+
+[node name="RoadH3" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 960, -320 )
+
+[node name="RoadH4" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 1280, -320 )
+
+[node name="RoadH5" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 1920, -320 )
+
+[node name="RoadH6" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 2240, -320 )
+
+[node name="RoadH7" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 2560, -320 )
+
+[node name="RoadH8" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 2880, -320 )
+
+[node name="RoadH9" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 3520, -320 )
+
+[node name="RoadH10" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 3840, -320 )
+
+[node name="RoadH11" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 4160, -320 )
+
+[node name="RoadH12" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 4480, -320 )
+
+[node name="RoadH13" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 5120, -320 )
+
+[node name="RoadH14" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 5440, -320 )
+
+[node name="RoadH15" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 5760, -320 )
+
+[node name="RoadH16" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 6080, -320 )
+
+[node name="RoadH17" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 6720, -320 )
+
+[node name="RoadH18" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 7040, -320 )
+
+[node name="RoadH19" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 7360, -320 )
+
+[node name="RoadH20" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 7680, -320 )
+
+[node name="RoadH21" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 8320, -320 )
+
+[node name="RoadH22" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 8640, -320 )
+
+[node name="RoadH23" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 8960, -320 )
+
+[node name="RoadH24" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 9280, -320 )
+
+[node name="RoadH25" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 9920, -320 )
+
+[node name="RoadH26" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 10240, -320 )
+
+[node name="RoadH27" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 10560, -320 )
+
+[node name="RoadH28" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 10880, -320 )
+
+[node name="RoadH29" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 11520, -320 )
+
+[node name="RoadH30" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 11840, -320 )
+
+[node name="RoadH31" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 12160, -320 )
+
+[node name="RoadH32" parent="CircleRoadEast" instance=ExtResource( 2 )]
+position = Vector2( 12480, -320 )
+
+[node name="RoadL" parent="CircleRoadEast" instance=ExtResource( 8 )]
+position = Vector2( 320, -320 )
+rotation = 1.5708
+
+[node name="RoadT" parent="CircleRoadEast" instance=ExtResource( 9 )]
+position = Vector2( 1600, -320 )
+
+[node name="RoadT2" parent="CircleRoadEast" instance=ExtResource( 9 )]
+position = Vector2( 3200, -320 )
+
+[node name="RoadT3" parent="CircleRoadEast" instance=ExtResource( 9 )]
+position = Vector2( 4800, -320 )
+
+[node name="RoadT4" parent="CircleRoadEast" instance=ExtResource( 9 )]
+position = Vector2( 6400, -320 )
+
+[node name="RoadT5" parent="CircleRoadEast" instance=ExtResource( 9 )]
+position = Vector2( 8000, -320 )
+
+[node name="RoadT6" parent="CircleRoadEast" instance=ExtResource( 9 )]
+position = Vector2( 9600, -320 )
+
+[node name="RoadT7" parent="CircleRoadEast" instance=ExtResource( 9 )]
+position = Vector2( 11200, -320 )
 
 [node name="BorderPark" type="Node2D" parent="."]
 position = Vector2( 0, 320 )

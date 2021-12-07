@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/car.png" type="Texture" id=1]
 [ext_resource path="res://Car.gd" type="Script" id=2]
+[ext_resource path="res://CollisionSensor.gd" type="Script" id=3]
+[ext_resource path="res://RoadSensor.gd" type="Script" id=4]
+[ext_resource path="res://RoadSensor.tscn" type="PackedScene" id=5]
 
 [sub_resource type="PhysicsMaterial" id=1]
 bounce = 0.14
@@ -12,7 +15,11 @@ extents = Vector2( 26, 63 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 24, 48 )
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 32, 48 )
+
 [node name="Car" type="RigidBody2D"]
+position = Vector2( 0, -8 )
 mass = 5.0
 physics_material_override = SubResource( 1 )
 contacts_reported = 100
@@ -25,27 +32,69 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
-[node name="FrontArea" type="Area2D" parent="CollisionShape2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/FrontArea"]
+[node name="FrontCollisionSensor" type="Area2D" parent="."]
 position = Vector2( 0, -112 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontCollisionSensor"]
 shape = SubResource( 3 )
 
-[node name="LeftArea" type="Area2D" parent="CollisionShape2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/LeftArea"]
+[node name="LeftCollisionSensor" type="Area2D" parent="."]
 position = Vector2( -48, -112 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftCollisionSensor"]
 shape = SubResource( 3 )
 
-[node name="RightArea" type="Area2D" parent="CollisionShape2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/RightArea"]
+[node name="RightCollisionSensor" type="Area2D" parent="."]
 position = Vector2( 48, -112 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightCollisionSensor"]
 shape = SubResource( 3 )
 
-[connection signal="body_entered" from="CollisionShape2D/FrontArea" to="." method="_on_FrontArea_body_entered"]
-[connection signal="body_exited" from="CollisionShape2D/FrontArea" to="." method="_on_FrontArea_body_exited"]
-[connection signal="body_entered" from="CollisionShape2D/LeftArea" to="." method="_on_LeftArea_body_entered"]
-[connection signal="body_exited" from="CollisionShape2D/LeftArea" to="." method="_on_LeftArea_body_exited"]
-[connection signal="body_entered" from="CollisionShape2D/RightArea" to="." method="_on_RightArea_body_entered"]
-[connection signal="body_exited" from="CollisionShape2D/RightArea" to="." method="_on_RightArea_body_exited"]
+[node name="RightRoadSensor" parent="." instance=ExtResource( 5 )]
+position = Vector2( 32, -72 )
+
+[node name="LeftRoadSensor" parent="." instance=ExtResource( 5 )]
+position = Vector2( -32, -72 )
+
+[node name="FrontRoadSensor" type="Area2D" parent="."]
+position = Vector2( 0, -104 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontRoadSensor"]
+position = Vector2( 0, -8 )
+shape = SubResource( 4 )
+
+[node name="Front" type="Position2D" parent="FrontRoadSensor"]
+position = Vector2( 0, -8 )
+__meta__ = {
+"_gizmo_extents_": 8.0
+}
+
+[node name="LED" type="Polygon2D" parent="FrontRoadSensor"]
+visible = false
+color = Color( 1, 0, 0, 1 )
+polygon = PoolVector2Array( 8, -4, 8, -8, 8, 4, 4, 8, -4, 8, -8, 4, -8, -4.83803, -4, -8, 0, -8, 4.14823, -8 )
+
+[connection signal="body_entered" from="FrontCollisionSensor" to="FrontCollisionSensor" method="_on_CollisionSensor_body_entered"]
+[connection signal="body_exited" from="FrontCollisionSensor" to="FrontCollisionSensor" method="_on_CollisionSensor_body_exited"]
+[connection signal="body_entered" from="LeftCollisionSensor" to="LeftCollisionSensor" method="_on_CollisionSensor_body_entered"]
+[connection signal="body_exited" from="LeftCollisionSensor" to="LeftCollisionSensor" method="_on_CollisionSensor_body_exited"]
+[connection signal="body_entered" from="RightCollisionSensor" to="RightCollisionSensor" method="_on_CollisionSensor_body_entered"]
+[connection signal="body_exited" from="RightCollisionSensor" to="RightCollisionSensor" method="_on_CollisionSensor_body_exited"]
+[connection signal="area_entered" from="FrontRoadSensor" to="FrontRoadSensor" method="_on_RoadSensor_area_entered"]
+[connection signal="area_exited" from="FrontRoadSensor" to="FrontRoadSensor" method="_on_RoadSensor_area_exited"]

@@ -4,6 +4,7 @@
 
 [node name="RoadDirectionMarker1" type="Area2D"]
 position = Vector2( 192, 112 )
+monitoring = false
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

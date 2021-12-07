@@ -2,16 +2,6 @@ extends RigidBody2D
 
 class_name ClassCar
 
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-#	pass
-
-# ------ sensors ----
-var front_area = 0
-var left_area = 0
-var right_area = 0
-
-
 # ------- physics -----
 
 func _physics_process(delta):
@@ -22,7 +12,7 @@ func _physics_process(delta):
 	
 	# power/steering parameters
 	var forward_power = 1e4
-	var rotate_coefficient = 5e3
+	var rotate_coefficient = 1e4
 	var reverse_power = 5e3
 	
 	# get and compute some directions and velocities
@@ -43,22 +33,48 @@ func _physics_process(delta):
 	var press_left=false
 	var press_right=false
 	
-	if front_area > 0:
+	# avoid collisions
+	if $FrontCollisionSensor.count > 0:
 		press_down=true
 	else:
 		press_up=true
 	
-	if left_area > 0:
+	if $LeftCollisionSensor.count > 0:
 		if roll_forwards:
 			press_right=true
 		else:
 			press_left=true
 		
-	if right_area > 0:
+	if $RightCollisionSensor.count > 0:
 		if roll_forwards:
 			press_left=true
 		else:
 			press_right=true
+			
+	# stay in road boundaries
+	if $RightRoadSensor.road && !$LeftRoadSensor.road:
+		if roll_forwards:
+			press_right=true
+		
+	if $LeftRoadSensor.road && !$RightRoadSensor.road:
+		if roll_forwards:
+			press_left=true
+	
+	# follow road		
+	if $FrontRoadSensor.road:
+		var rel_rotation = $FrontRoadSensor.road.marker.global_rotation - self.global_rotation
+		if rel_rotation > PI:
+			rel_rotation-=2*PI
+		if rel_rotation < -PI:
+			rel_rotation+=2*PI
+		#print ("rel_rotation ",rel_rotation)
+		if rel_rotation > PI/16:
+			press_right=true;
+		if rel_rotation < -PI/16:
+			press_left=true;
+				
+			
+			
 	
 	# contol forward/backward/breaking
 	var breaking = false
@@ -82,8 +98,8 @@ func _physics_process(delta):
 	if breaking:
 		roll_friction_coeefficient = 100
 
-	var slide_friction_coeefficient = 300
-	var angular_friction_coeefficient = 1e5
+	var slide_friction_coeefficient = 1000
+	var angular_friction_coeefficient = 5e5
 	
 	var angular_friction_torque = -angular_velocity * angular_friction_coeefficient * delta
 	var forward_friction_force = -forward_velocity * roll_friction_coeefficient * delta
@@ -93,23 +109,4 @@ func _physics_process(delta):
 	add_force(Vector2(0,0),right_friction_force)
 	add_torque(angular_friction_torque)
 		
-
-
-func _on_FrontArea_body_entered(body):
-	front_area+=1
-
-func _on_FrontArea_body_exited(body):
-	front_area-=1
-
-func _on_LeftArea_body_entered(body):
-	left_area+=1
-
-func _on_LeftArea_body_exited(body):
-	left_area-=1
-
-func _on_RightArea_body_entered(body):
-	right_area+=1
-
-func _on_RightArea_body_exited(body):
-	right_area-=1
 

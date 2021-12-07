@@ -7,10 +7,11 @@ var Car = load("res://Car.tscn")
 var Util = load("res://Util.gd")
 
 export var count_pickup_bodies = 0
+export var max_cars = 20
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	$Player.position = $PlayerStartPos.position
+#func _ready():
+#	pass	
 	
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
@@ -59,7 +60,7 @@ func _on_CarSpawnArea_body_exited(body):
 func spawn_car_if_needed():
 	var cars = get_tree().get_nodes_in_group("cars")
 	print ("#cars=",cars.size())
-	if cars.size() < 20:
+	if cars.size() < max_cars:
 		spawn_car()
 
 func spawn_car():

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/pavestone.png" type="Texture" id=1]
 [ext_resource path="res://RoadDirectionMarker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://RoadArea.tscn" type="PackedScene" id=3]
 
 [node name="RoadL" type="Node2D"]
 
@@ -57,10 +58,23 @@ position = Vector2( 160, -96 )
 offset = Vector2( -160, 100 )
 polygon = PoolVector2Array( 156, 0, 164, 0, 164, 56, 156, 56 )
 
-[node name="RoadDirectionMarker1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 224, 96 )
+[node name="RoadArea2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 192, 128 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadArea2"]
+polygon = PoolVector2Array( 56, -128, 56, -56, 128, -56, 128, 24, 8, 24, -24, -8, -24, -128 )
+
+[node name="RoadDirectionMarker1" parent="RoadArea2" instance=ExtResource( 2 )]
+position = Vector2( 32, -32 )
 rotation = -0.785398
 
-[node name="RoadDirectionMarker2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 144, 176 )
-rotation = 2.35619
+[node name="RoadArea3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 136, 176 )
+rotation = 3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadArea3"]
+polygon = PoolVector2Array( -184, -72, -16, -72, 64, 7.99998, 64, 176, -16, 176, -16, 48, -56, 8, -184, 8.00002 )
+
+[node name="RoadDirectionMarker1" parent="RoadArea3" instance=ExtResource( 2 )]
+position = Vector2( 0, 1.52588e-05 )
+rotation = -0.785398

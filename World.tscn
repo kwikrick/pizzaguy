@@ -18,13 +18,7 @@ script = ExtResource( 1 )
 position = Vector2( 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 128, 320 )
-
-[node name="Camera2D_disabled" type="Camera2D" parent="Player"]
-visible = false
-position = Vector2( 0, -192 )
-rotating = true
-smoothing_enabled = true
+position = Vector2( 108, 705 )
 
 [node name="SmoothRotatingCamera2D" type="Node2D" parent="Player"]
 script = ExtResource( 5 )
@@ -34,28 +28,34 @@ script = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CarSpawnArea"]
 shape = SubResource( 1 )
 
-[node name="PlayerStartPos" type="Position2D" parent="."]
-position = Vector2( 128, 320 )
-
 [node name="PickupArea" parent="." instance=ExtResource( 9 )]
 position = Vector2( 827, 135 )
 
 [node name="Objects" type="Node" parent="."]
 
 [node name="Trash1" parent="Objects" instance=ExtResource( 7 )]
-position = Vector2( 115, 162 )
+position = Vector2( 733, 534 )
 
 [node name="Trash2" parent="Objects" instance=ExtResource( 7 )]
-position = Vector2( 160, 101 )
+position = Vector2( 778, 473 )
 
 [node name="Trash3" parent="Objects" instance=ExtResource( 7 )]
-position = Vector2( 160, 220 )
+position = Vector2( 778, 592 )
 
 [node name="Trash4" parent="Objects" instance=ExtResource( 7 )]
-position = Vector2( 203, 158 )
+position = Vector2( 821, 530 )
 
 [node name="Car" parent="Objects" instance=ExtResource( 4 )]
-position = Vector2( 440, 139 )
+position = Vector2( 212, 746 )
+rotation = 0.115192
+
+[node name="Camera2D_test" type="Camera2D" parent="Objects/Car"]
+visible = false
+position = Vector2( -130.091, -219.502 )
+rotation = -0.115192
+scale = Vector2( 1, 1 )
+rotating = true
+smoothing_enabled = true
 
 [node name="CarSpawnTimer" type="Timer" parent="."]
 wait_time = 0.05

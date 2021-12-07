@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://RoadSensor.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 8, 8 )
+
+[node name="RoadSensor" type="Area2D"]
+position = Vector2( 16, -56 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 4 )
+
+[node name="Front" type="Position2D" parent="."]
+position = Vector2( 0, -8 )
+__meta__ = {
+"_gizmo_extents_": 8.0
+}
+
+[node name="LED" type="Polygon2D" parent="."]
+visible = false
+color = Color( 1, 0, 0, 1 )
+polygon = PoolVector2Array( 8, -4, 8, -8, 8, 4, 4, 8, -4, 8, -8, 4, -8, -4.83803, -4, -8, 0, -8, 4.14823, -8 )
+
+[connection signal="area_entered" from="." to="." method="_on_RoadSensor_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_RoadSensor_area_exited"]

@@ -43,7 +43,7 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="LeftCollisionSensor" type="Area2D" parent="."]
-position = Vector2( -48, -112 )
+position = Vector2( -24, -112 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -53,7 +53,7 @@ __meta__ = {
 shape = SubResource( 3 )
 
 [node name="RightCollisionSensor" type="Area2D" parent="."]
-position = Vector2( 48, -112 )
+position = Vector2( 24, -112 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -98,3 +98,4 @@ polygon = PoolVector2Array( 8, -4, 8, -8, 8, 4, 4, 8, -4, 8, -8, 4, -8, -4.83803
 [connection signal="body_exited" from="RightCollisionSensor" to="RightCollisionSensor" method="_on_CollisionSensor_body_exited"]
 [connection signal="area_entered" from="FrontRoadSensor" to="FrontRoadSensor" method="_on_RoadSensor_area_entered"]
 [connection signal="area_exited" from="FrontRoadSensor" to="FrontRoadSensor" method="_on_RoadSensor_area_exited"]
+[connection signal="new_road" from="FrontRoadSensor" to="." method="_on_FrontRoadSensor_new_road"]

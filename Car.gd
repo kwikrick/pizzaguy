@@ -2,6 +2,8 @@ extends RigidBody2D
 
 class_name ClassCar
 
+var road:RoadArea = null
+
 # ------- physics -----
 
 func _physics_process(delta):
@@ -50,19 +52,42 @@ func _physics_process(delta):
 			press_left=true
 		else:
 			press_right=true
-			
+	
+	# determine current road from front road sensor
+
+	var isRoadFront = false
+	var isRoadLeft = false
+	var isRoadRight = false
+		
+	if road:
+		isRoadFront = $FrontRoadSensor.roads.has(road)
+		isRoadLeft = $LeftRoadSensor.roads.has(road)
+		isRoadRight = $LeftRoadSensor.roads.has(road)
+				
+	if not isRoadFront:
+		road = null
+		for road2 in $FrontRoadSensor.roads:
+			if is_suitable_road(road2):
+				road=road2
+	
+	if road:
+		isRoadFront = $LeftRoadSensor.roads.has(road)
+		isRoadLeft = $LeftRoadSensor.roads.has(road)
+		isRoadRight = $RightRoadSensor.roads.has(road)
+	
 	# stay in road boundaries
-	if $RightRoadSensor.road && !$LeftRoadSensor.road:
+		
+	if isRoadRight && !isRoadLeft:
 		if roll_forwards:
 			press_right=true
 		
-	if $LeftRoadSensor.road && !$RightRoadSensor.road:
+	if isRoadLeft && !isRoadRight:
 		if roll_forwards:
 			press_left=true
 	
 	# follow road		
-	if $FrontRoadSensor.road:
-		var rel_rotation = $FrontRoadSensor.road.marker.global_rotation - self.global_rotation
+	if isRoadFront:
+		var rel_rotation = road.marker.global_rotation - self.global_rotation
 		if rel_rotation > PI:
 			rel_rotation-=2*PI
 		if rel_rotation < -PI:
@@ -72,9 +97,6 @@ func _physics_process(delta):
 			press_right=true;
 		if rel_rotation < -PI/16:
 			press_left=true;
-				
-			
-			
 	
 	# contol forward/backward/breaking
 	var breaking = false
@@ -108,5 +130,22 @@ func _physics_process(delta):
 	add_force(Vector2(0,0),forward_friction_force)
 	add_force(Vector2(0,0),right_friction_force)
 	add_torque(angular_friction_torque)
-		
+	
+	
 
+
+
+func _on_FrontRoadSensor_new_road(new_road):
+	if is_suitable_road(new_road) and randf()<0.5:
+		road=new_road
+	
+	
+func is_suitable_road(new_road):
+	var rel_rotation = new_road.marker.global_rotation - self.global_rotation
+	if rel_rotation > PI:
+		rel_rotation-=2*PI
+	if rel_rotation < -PI:
+		rel_rotation+=2*PI
+	#print ("rel_rotation ",rel_rotation)
+	if abs(rel_rotation) < PI/3:
+		return true

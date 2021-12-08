@@ -60,13 +60,13 @@ rotation = 1.5708
 offset = Vector2( -160, 100 )
 polygon = PoolVector2Array( 156, 0, 164, 0, 164, 56, 156, 56 )
 
-[node name="RoadArea" parent="." instance=ExtResource( 3 )]
+[node name="RoadArea1" parent="." instance=ExtResource( 3 )]
 position = Vector2( 192, 208 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadArea1"]
 polygon = PoolVector2Array( -192, -40, 128, -40, 128, 40, -192, 40 )
 
-[node name="RoadDirectionMarker1" parent="RoadArea" instance=ExtResource( 2 )]
+[node name="RoadDirectionMarker1" parent="RoadArea1" instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
 rotation = 1.5708
 

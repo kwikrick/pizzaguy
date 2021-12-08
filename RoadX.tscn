@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/pavestone.png" type="Texture" id=1]
+[ext_resource path="res://RoadArea.tscn" type="PackedScene" id=2]
+[ext_resource path="res://RoadDirectionMarker.tscn" type="PackedScene" id=3]
 
 [node name="RoadX" type="Node2D"]
 
@@ -37,6 +39,9 @@ polygon = PoolVector2Array( 0, 0, 192, 0, 192, 63.8597, 256, 63.8597, 256, 255.8
 
 [node name="Crossing1" type="Node2D" parent="."]
 position = Vector2( 268, 64 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CenterMark8" type="Polygon2D" parent="Crossing1"]
 position = Vector2( 20, 184 )
@@ -113,6 +118,9 @@ polygon = PoolVector2Array( 152, 7.99997, 164, 8, 164, 48, 152, 48 )
 [node name="Crossing2" type="Node2D" parent="."]
 position = Vector2( 252, 12 )
 rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CenterMark8" type="Polygon2D" parent="Crossing2"]
 position = Vector2( 20, 184 )
@@ -189,6 +197,9 @@ polygon = PoolVector2Array( 152, 7.99997, 164, 8, 164, 48, 152, 48 )
 [node name="Crossing4" type="Node2D" parent="."]
 position = Vector2( 256, 268 )
 rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CenterMark8" type="Polygon2D" parent="Crossing4"]
 position = Vector2( 20, 184 )
@@ -264,6 +275,9 @@ polygon = PoolVector2Array( 152, 7.99997, 164, 8, 164, 48, 152, 48 )
 
 [node name="Crossing3" type="Node2D" parent="."]
 position = Vector2( 12, 68 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CenterMark8" type="Polygon2D" parent="Crossing3"]
 position = Vector2( 20, 96.0001 )
@@ -336,3 +350,92 @@ position = Vector2( 20, 96.0001 )
 rotation = 1.57079
 offset = Vector2( -248, -28.0002 )
 polygon = PoolVector2Array( 152, 7.99997, 164, 8, 164, 48, 152, 48 )
+
+[node name="RoadAreaE" parent="." instance=ExtResource( 2 )]
+position = Vector2( 192, 208 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadAreaE"]
+polygon = PoolVector2Array( -192, -40, 128, -40, 128, 40, -192, 40 )
+
+[node name="RoadDirectionMarker1" parent="RoadAreaE" instance=ExtResource( 3 )]
+position = Vector2( 96, 0 )
+rotation = 1.5708
+
+[node name="RoadAreaW" parent="." instance=ExtResource( 2 )]
+position = Vector2( 128, 112 )
+rotation = 3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadAreaW"]
+polygon = PoolVector2Array( -192, -40, 128, -40, 128, 40, -192, 40 )
+
+[node name="RoadDirectionMarker1" parent="RoadAreaW" instance=ExtResource( 3 )]
+position = Vector2( 96, 0.000244141 )
+rotation = 1.5708
+
+[node name="RoadAreaN" parent="." instance=ExtResource( 2 )]
+position = Vector2( 208, 192 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadAreaN"]
+position = Vector2( 208, 88 )
+polygon = PoolVector2Array( -248, -280, -168, -280, -168, 40, -248, 40 )
+
+[node name="RoadDirectionMarker1" parent="RoadAreaN" instance=ExtResource( 3 )]
+position = Vector2( 0, -160 )
+
+[node name="RoadAreaS" parent="." instance=ExtResource( 2 )]
+position = Vector2( 112, 128 )
+rotation = 3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadAreaS"]
+position = Vector2( 208, 88 )
+polygon = PoolVector2Array( -248, -280, -168, -280, -168, 40, -248, 40 )
+
+[node name="RoadDirectionMarker1" parent="RoadAreaS" instance=ExtResource( 3 )]
+position = Vector2( 0.000404358, -160 )
+
+[node name="RoadAreaNE" parent="." instance=ExtResource( 2 )]
+position = Vector2( 208, 288 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadAreaNE"]
+polygon = PoolVector2Array( 40, 32, -40, 32, -40, -96, -16, -120, 112, -120, 112, -48, 40, -46.5 )
+
+[node name="RoadDirectionMarker1" parent="RoadAreaNE" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+rotation = 0.785398
+scale = Vector2( 1, 1 )
+
+[node name="RoadAreaES" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, 208 )
+rotation = 1.5708
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadAreaES"]
+polygon = PoolVector2Array( 40, 32, -40, 32, -40, -96, -16, -120, 112, -120, 112, -40, 40, -40 )
+
+[node name="RoadDirectionMarker1" parent="RoadAreaES" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+rotation = 0.785398
+scale = Vector2( 1, 1 )
+
+[node name="RoadAreaSW" parent="." instance=ExtResource( 2 )]
+position = Vector2( 112, 32 )
+rotation = 3.14159
+
+[node name="RoadDirectionMarker1" parent="RoadAreaSW" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+rotation = 0.785398
+scale = Vector2( 1, 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadAreaSW"]
+polygon = PoolVector2Array( 40, 32, -40, 32, -40, -96, -16, -120, 112, -120, 112, -40, 40, -39.5 )
+
+[node name="RoadAreaWN" parent="." instance=ExtResource( 2 )]
+position = Vector2( 288, 112 )
+rotation = 4.71239
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RoadAreaWN"]
+polygon = PoolVector2Array( 40, 32, -40, 32, -40, -96, -16, -120, 112, -120, 112, -40, 40, -40 )
+
+[node name="RoadDirectionMarker1" parent="RoadAreaWN" instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+rotation = 0.785398
+scale = Vector2( 1, 1 )
